@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>AngularJS | Calculator </title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<!-- <script src = "angular-route.js"></script> -->
+	<!-- <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"</script> -->
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script> -->
+	<script src = "controller.js"></script>
+	<style>		.section{clear:both;padding:0;margin:0}.col{background-color:#FAEBD7;height:20px;text-align:center;display:block;float:left;margin:1% 0 1% 1.6%}.col:first-child{margin-left:0}.col:hover{background-color:#f0f0ff}.group:before,.group:after{content:"";display:table}.group:after{clear:both}.c3of4{width:49.2%}.c1of4{width:23.8%}
+	</style>
+</head>
+<body ng-app = "calculatorApp">
+	<div ng-controller = "calculatorController" >
+		<div class="section group"> <!-- Display the result row -->
+			<div class="col c3of4">{{ calculator.currentDisplay }}</div>
+			<div ng-click="resetClicked()" class="col c1of4">C</div>
+			<div ng-click="operationButtonClicked('/')" class="col c1of4">/</div>
+
+		</div>
+		<div class="section group"> <!-- Display the 1st number row -->
+			<div ng-click="numberButtonClicked(1)" class="col c1of4">1</div>
+			<div ng-click="numberButtonClicked(2)" class="col c1of4">2</div>
+			<div ng-click="numberButtonClicked(3)" class="col c1of4">3</div>
+			<div ng-click="operationButtonClicked('*')" class="col c1of4">*</div>
+		</div>
+		<div class="section group"> <!-- Display the 2nd number row -->
+			<div ng-click="numberButtonClicked(4)" class="col c1of4">4</div>
+			<div ng-click="numberButtonClicked(5)" class="col c1of4">5</div>
+			<div ng-click="numberButtonClicked(6)" class="col c1of4">6</div>
+			<div ng-click="operationButtonClicked('-')" class="col c1of4">-</div>
+		</div>
+		<div class="section group"> <!-- Display the 3rd number row -->
+			<div ng-click="numberButtonClicked(7)" class="col c1of4">7</div>
+			<div ng-click="numberButtonClicked(8)" class="col c1of4">8</div>
+			<div ng-click="numberButtonClicked(9)" class="col c1of4">9</div>
+			<div ng-click="operationButtonClicked('+')" class="col c1of4">+</div>
+		</div>
+		<div class="section group"> <!-- Display the calculate button row -->
+			<div ng-click="enterClicked()" class="col c1of4">=</div>
+		</div>
+		<!-- <input type = "text" ng-model = "num1" >
+		<input type = "text" ng-model = "num2" >
+		<button type = "button" ng-click = "add()">+</button>
+		<button type = "button" ng-click = "subtract()">-</button>
+		<button type = "button" ng-click = "multiply()">*</button>
+		<button type = "button" ng-click = "divide()">/</button>
+		<button type = "button" ng-click = "clear()">CE</button>
+		<h1> The result is : {{result}}</h1> -->
+	</div>
+	
+</body>
+</html>
